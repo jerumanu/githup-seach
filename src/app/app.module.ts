@@ -7,7 +7,8 @@ import { SearchComponent } from './search/search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RipoComponent } from './ripo/ripo.component';
 import { UserComponent } from './user/user.component';
-
+import { RipoService } from "./ripo.service";
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,9 +19,10 @@ import { UserComponent } from './user/user.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RipoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
