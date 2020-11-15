@@ -9,10 +9,10 @@
                 <div class="card-body">
                     <form action="" class="form-inline">
                         <div>
-                            <input type="search" class="form-control" placeholder="Github User" >
+                            <input type="search"(ngModule)="passSearchTerm" class="form-control" placeholder="Github User" >
                         </div>
                         <div>
-                            <input type="submit" value="submit" class="btn btn-secondary btn-sm">
+                            <input type="submit"(click)="submitSearch()" value="submit" class="btn btn-secondary btn-sm">
                         </div>
                     </form>
                 </div>
