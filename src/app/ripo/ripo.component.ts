@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ArgumentOutOfRangeError } from 'rxjs';
+import { RipoService } from "../ripo.service";
 @Component({
   selector: 'app-ripo',
   templateUrl: './ripo.component.html',
   styleUrls: ['./ripo.component.css']
 })
 export class RipoComponent implements OnInit {
+repos :any[]=[]
 
-  constructor() { }
+  constructor(private riposervice:RipoService) { }
 
   ngOnInit(): void {
+    this.riposervice.getripo("manu")
+      .subscribe((response:any )=>{
+        this.repos=response.items
+      }); 
+    
   }
 
 }
