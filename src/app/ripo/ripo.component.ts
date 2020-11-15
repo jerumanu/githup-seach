@@ -10,13 +10,14 @@ export class RipoComponent implements OnInit {
 repos :any[]=[]
 
   constructor(private riposervice:RipoService) { }
-
+  getUser(manu:string){
+  this.riposervice.getripo("manu")
+  .subscribe((response:any )=>{
+    this.repos=response.items
+  }); 
+  }
   ngOnInit(): void {
-    this.riposervice.getripo("manu")
-      .subscribe((response:any )=>{
-        this.repos=response.items
-      }); 
-    
+    this.getUser("manu")
   }
 
 }
