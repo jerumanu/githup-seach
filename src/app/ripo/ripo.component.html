@@ -1,10 +1,10 @@
 
 <div class="container-fluid">
   <!-- <app-search></app-search> -->
-  <app-form (passSearchTerm)="getUser($event)"></app-form>
+  <app-form (searchTerm)="getUser($event)"></app-form>
     <div class="text-center p-5">
       <h3>
-        Emmanuel cheriyot
+        
         <small class="text-muted">Github Public Respositories</small>
       </h3>
     </div>
@@ -12,9 +12,9 @@
       <div class="col-ms-4 ml-5 mb-3" *ngFor="let repo of repos">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{repo.name}}</h5>
-            
-            <p class="card-text">With supporting content</p>
+            <h5 class="card-title">{{repo.name}} </h5>
+             
+            <p class="card-text">{{repo.description}}</p>
             <a href="{{repo.html_url}}" class="btn btn-primary">Click the repos</a>
           </div>
         </div>

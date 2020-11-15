@@ -11,13 +11,13 @@ repos :any[]=[]
 
   constructor(private riposervice:RipoService) { }
   getUser(manu:string){
-  this.riposervice.getripo("manu")
+  this.riposervice.getripo(manu)
   .subscribe((response:any )=>{
     this.repos=response.items
   }); 
   }
   ngOnInit(): void {
-    this.getUser("manu")
+    this.getUser("praise")
   }
 
 }
